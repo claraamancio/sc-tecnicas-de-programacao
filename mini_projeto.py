@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def lancamento():
@@ -61,9 +60,9 @@ print("O lançamento com valor igual a doze aconteceu {fvezes} vezes.".format(fv
 - Supondo um jogo justo (ou seja, todos os lançamentos são igualmente prováveis), o resultado da sua simulação coincide com essa suposição? Por que sim ou por que não?
 - O que isso significa para um jogador do jogo de dados?
 
-Observe que, na análise de dados, geramos a média e a quantidade de vezes que cada resultado (soma de dois lançamentos aconteceu).
+Observe que, na análise de dados, geramos a média e a quantidade de vezes que cada resultado (soma de dois lançamentos) aconteceu.
 Se o jogo fosse realmente justo, a quantidade de ocorrências dos casos (2,3,4,5,6,7,8,9,10,11,12) seria a mesma, uma vez que um jogo justo implica resultados equiprováveis.
-Mas, o código, da maneira que foi construído nos mostra que há casos tendenciosos. Veja que, para 1000 simulações por exemplo, a maior ocorrência de resultados são aqueles perto da média.
+Mas, o código, da maneira que foi construído, mostra que há casos tendenciosos. Veja que, para 1000 simulações por exemplo, a maior ocorrência de resultados são aqueles perto da média.
 Sendo ainda mais clara, os resultados perto da média (ou mesmo iguais à média) são mais prováveis de acontecer.  
 Como temos um jogo tendencioso, para um jogador, se tivermos no caso de um jogo de apostas, o mais proveitoso seria apostar num resultado próximo à media, ou naquele que mais ocorre, uma vez que a probabilidade de sucesso seria maior.
 '''
