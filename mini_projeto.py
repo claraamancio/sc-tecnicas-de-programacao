@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def lancamento():
     primeiro_lancamento = np.random.choice([1,2,3,4,5,6])
@@ -56,14 +57,25 @@ print("O lançamento com valor igual a dez aconteceu {fvezes} vezes.".format(fve
 print("O lançamento com valor igual a onze aconteceu {fvezes} vezes.".format(fvezes = ocorrencia_onze))
 print("O lançamento com valor igual a doze aconteceu {fvezes} vezes.".format(fvezes = ocorrencia_doze))
 
+def grafico():
+    plt.hist(dados_totais,  color= "m", bins = 30, align = 'mid')
+    plt.xlabel("Resultado da soma dos lançamentos dos dados") 
+    plt.ylabel("Número de ocorrências") 
+    plt.xticks(np.arange(0, 15, 1))
+    plt.title("Histograma")
+    plt.legend()
+    plt.show()
+
+grafico()
+
 '''Teste de Hipótese: 
 - Supondo um jogo justo (ou seja, todos os lançamentos são igualmente prováveis), o resultado da sua simulação coincide com essa suposição? Por que sim ou por que não?
 - O que isso significa para um jogador do jogo de dados?
 
 Observe que, na análise de dados, geramos a média e a quantidade de vezes que cada resultado (soma de dois lançamentos) aconteceu.
 Se o jogo fosse realmente justo, a quantidade de ocorrências dos casos (2,3,4,5,6,7,8,9,10,11,12) seria a mesma, uma vez que um jogo justo implica resultados equiprováveis.
-Mas, o código, da maneira que foi construído, mostra que há casos tendenciosos. Veja que, para 1000 simulações, por exemplo, a maior ocorrência de resultados são aqueles perto da média.
-Sendo ainda mais clara, para este caso, os resultados perto da média (ou mesmo iguais à média(parte inteira caso a média seja um float)) são mais prováveis de acontecer.  
-Como temos um jogo tendencioso, para um jogador, se tivermos no caso de um jogo de apostas, o mais proveitoso seria apostar num resultado próximo à media, ou naquele que mais ocorre, uma vez que a probabilidade de sucesso seria maior.
+Mas, o código, da maneira que foi construído, mostra que há casos tendenciosos. Veja que, para 1000 simulações, por exemplo, a maior ocorrência de resultados são aqueles perto da média (por volta de 7).
+Sendo ainda mais clara, para este caso, os resultados perto da média (ou mesmo iguais à média (parte inteira caso a média seja um float)) são mais prováveis de acontecer. Observe, ainda, no gráfico, para grandes quantidades de simulações, o histograma nos recorda uma distribuição normal para os resultados (soma dos lançamentos).
+Como temos um jogo tendencioso, para um jogador, se estivermos no caso de um jogo de apostas, o mais proveitoso seria apostar num resultado próximo à media, ou naquele que mais ocorre, uma vez que a probabilidade de sucesso seria maior.
 Para o caso em que há poucas simulações, fica mais difícil o jogador prever qual resultado possui uma probabilidade maior, uma vez que a média (ou valores perto da média) nem sempre vai representar o resultado que mais acontece.
 '''
